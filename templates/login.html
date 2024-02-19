@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:39 GMT -->
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <title>Preskool - Login</title>
+      <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
+      <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+       
+       <style>
+   /* Custom styles for modern login with a trendy color scheme and attractive background */
+   body {
+      background: linear-gradient(to bottom right, #f3e7e9, #b7c3d5); /* Gradient background from pink to light blue */
+      font-family: 'Poppins', sans-serif;
+   }
+
+   .login-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+   }
+
+   .login-container {
+      width: 450px; /* Increased width for the login container */
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .login-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+   }
+
+   .form-group {
+      margin-bottom: 20px;
+      width: 100%; /* Full width for form inputs */
+   }
+
+   .form-control {
+      border-radius: 4px;
+   }
+
+   .btn-login {
+      background-color: #6c5ce7; /* Modern purple color */
+      border-color: #6c5ce7; /* Modern purple color */
+      border-radius: 4px;
+      padding: 12px 20px;
+      width: 100%; /* Full width for button */
+   }
+
+   .btn-login:hover {
+      background-color: #4b3cae; /* Darker purple color on hover */
+      border-color: #4b3cae; /* Darker purple color on hover */
+   }
+
+   .forgotpass {
+      text-align: center;
+      margin-bottom: 20px;
+   }
+
+   .forgotpass a {
+      color: #6c5ce7; /* Modern purple color */
+   }
+
+   .dont-have {
+      text-align: center;
+   }
+
+   .dont-have a {
+      color: #6c5ce7; /* Modern purple color */
+   }
+
+   .login-image {
+      width: 200px; /* Set the width of the image */
+      margin-bottom: 20px; /* Add some space below the image */
+   }
+</style>
+   </head>
+   <body>
+      <div class="main-wrapper login-body">
+         <div class="login-wrapper">
+            <div class="container">
+               <div class="loginbox">
+                  <div class="login-left">
+                     <img class="img-fluid" src="{% static 'assets/img/logo-white.png' %}" alt="Logo">
+                  </div>
+                  <div class="login-right">
+                     <div class="login-right-wrap">
+                        <h1>Login</h1>
+                        <p class="account-subtitle">Access to our dashboard</p>
+                        <form action="{% url 'dologin' %}" method="post">
+                            {% csrf_token %}
+                           <div class="form-group">
+                              <input class="form-control" type="text" placeholder="Email" name="email">
+                           </div>
+                           <div class="form-group">
+                              <input class="form-control" type="text" placeholder="Password" name="password">
+                           </div>
+                           <div class="form-group">
+                              <button class="btn btn-primary btn-block" type="submit">Login</button>
+                           </div>
+                        </form>
+                        <div class="text-center forgotpass"><a href="forgot-password.html">Forgot Password?</a></div>
+                        <div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+      <script src="{% static 'assets/js/popper.min.js' %}"></script>
+      <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets/js/script.js' %}"></script>
+   </body>
+   <!-- Mirrored from preschool.dreamguystech.com/html-template/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:40 GMT -->
+</html>
